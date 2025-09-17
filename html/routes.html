@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routes</title>
+  <link rel="stylesheet" href="../css/style_routes.css">
+</head>
+
+<body>
+  <div class="mobile-screen">
+    <div class="header">
+      <span class="back-btn">
+        <img src="../images/back arrow.png" alt="">
+      </span>
+      <h2>🚌 Bus Routes</h2>
+    </div>
+
+    <div class="content">
+      <div class="search-box">
+        <input type="text" placeholder="From">
+        <input type="text" placeholder="To">
+        <button>Search</button>
+      </div>
+
+      <ul class="route-list">
+        <li>
+          <span>Chathiram → Central Bus Stand</span>
+          <span class="time">30 min</span>
+        </li>
+        <li>
+          <span>Samayapuram → Panjapur</span>
+          <span class="time">45 mins</span>
+        </li>
+        <li>
+          <span>Central Bus Stand → Airport</span>
+          <span class="time">40 mins</span>
+        </li>
+        <li>
+          <span>Chathiram → Panjapur</span>
+          <span class="time">1.5 hours</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    function navigateTo(url) {
+      const screen = document.querySelector('.mobile-screen');
+      screen.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = url;
+      }, 500);
+    }
+
+    const backBtn = document.querySelector('.back-btn');
+    backBtn.addEventListener('click', () => {
+      navigateTo('main.html');
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background: linear-gradient(135deg, #0f172a, #1e293b, #334155); smooth dark bg */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Mobile screen */
+h2 {
+  color:#0f172a;
+}
+.mobile-screen {
+  width: 360px;
+  height: 700px;
+  background-image: url('../images/Sevahan_login.jpg');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.mobile-screen img{
+  height: 700px;
+  width: 360px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.content {
+  margin-top: 125px;
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  color: white;
+}
+
+
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+  margin-bottom: 30px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Question */
+.question {
+  font-family: sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: 000000;
+}
+
+/* Role buttons */
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 85%;
+}
+
+.role-btn {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1c51a8, #5c2293); /* blue → purple */
+  color: white;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(25deg);
+  transition: all 0.5s;
+}
+
+.role-btn:hover::before {
+  left: 100%;
+}
+
+.role-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.5);
+}
+
+.role-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}

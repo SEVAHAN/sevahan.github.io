@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUND UI - Bus Info</title>
+    <link rel="stylesheet" href="../css/style_info.css">
+</head>
+
+<body>
+    <div class="mobile-screen">
+        <div class="header">
+            <button class="back-btn" onclick="goBack()">
+                <img src="../images/back arrow.png" alt="">
+            </button>
+            <h2>Bus Information</h2>
+        </div>
+
+        <div class="content">
+            <!-- Bus Info Cards -->
+            <div class="bus-card">
+                <div class="bus-details">
+                    <h3>Bus 101</h3>
+                    <p><strong>Route:</strong> Chennai → Trichy</p>
+                    <p><strong>Arrival:</strong> 10:15 AM</p>
+                </div>
+                <span class="status on-time">On Time</span>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-details">
+                    <h3>Bus 205</h3>
+                    <p><strong>Route:</strong> Madurai → Trichy</p>
+                    <p><strong>Arrival:</strong> 10:25 AM</p>
+                    <p><strong>Delayed by: </strong>10 mins</p>
+                </div>
+                <span class="status delayed">Delayed</span>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-details">
+                    <h3>Bus 310</h3>
+                    <p><strong>Route:</strong> SRM → Central Bus Stand</p>
+                    <p><strong>Arrival:</strong> 10:40 AM</p>
+                </div>
+                <span class="status on-time">On Time</span>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-details">
+                    <h3>Bus 415</h3>
+                    <p><strong>Route:</strong> Rajagopuram → Srirangam</p>
+                    <p><strong>Arrival:</strong> 10:55 AM</p>
+                    <p><strong>Delayed by: </strong>25 mins</p>
+                </div>
+                <span class="status delayed">Delayed</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            navigateTo('main.html');
+        }
+
+        function navigateTo(url) {
+            const screen = document.querySelector('.mobile-screen');
+            screen.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>

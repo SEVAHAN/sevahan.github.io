@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUND UI - Driver</title>
+    <link rel="stylesheet" href="../css/driver.css">
+</head>
+
+<body>
+    <div class="mobile-screen">
+        <div class="header">
+            <button class="back-btn" onclick="goBack()">
+                <img src="../images/back arrow.png" alt="">
+            </button>
+            <h2>Driver Panel</h2>
+        </div>
+
+        <div class="content">
+            <div class="driver-form">
+                <label for="busId">Enter Bus ID</label>
+                <input type="text" id="busId" placeholder="e.g., Bus 101">
+
+                <button class="start-btn" onclick="startTrip()">Start Trip</button>
+            </div>
+
+            <div id="gps-status" class="gps-status">
+                GPS Tracking: <span class="status-text">Not Started</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function startTrip() {
+            const busId = document.getElementById("busId").value;
+            const statusText = document.querySelector(".status-text");
+
+            if (busId.trim() === "") {
+                alert("Please enter a valid Bus ID.");
+                return;
+            }
+
+            // Change GPS status
+            statusText.textContent = "Tracking...";
+            statusText.style.color = "green";
+
+            // Simulate GPS tracking (later this will use real geolocation API)
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition((pos) => {
+                    console.log("Latitude: " + pos.coords.latitude +
+                        " Longitude: " + pos.coords.longitude);
+                });
+            } else {
+                alert("GPS not supported on this device.");
+            }
+        }
+    </script>
+</body>
+
+</html>

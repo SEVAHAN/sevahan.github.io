@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUND UI</title>
+    <link rel="stylesheet" href="../css/style_main.css">
+</head>
+
+<body>
+    <div class="mobile-screen">
+        <div class="content">
+            <div id="header">
+                <button type="button" id="menu-button">
+                    <img src="../images/menu-of-three-lines.png">
+                </button>
+                <input type="text" id="search-bar" placeholder="Where are you going?">
+            </div>
+            <!-- Sidebar inside mobile screen -->
+            <div id="sidebar">
+                <div class="sidebar-header">
+                    <span class="back-btn">←</span>
+                    <h3>Dashboard</h3>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <div class="profile-icon">👤</div>
+                        <div>
+                            <p class="name">VARADHA P SAJEEV</p>
+                            <p class="phone">982964732</p>
+                        </div>
+                    </div>
+                    <div class="rating">⭐ 4.32 My Rating</div>
+                </div>
+
+                <ul class="menu-list">
+                    <li><span>❓</span> Help <span class="arrow">›</span></li>
+                    <li><span>💳</span> Payment <span class="arrow">›</span></li>
+                    <li><span>🕒</span> My Rides <span class="arrow">›</span></li>
+                    <li><span>🛡️</span> Safety <span class="arrow">›</span></li>
+                    <li><span>🎁</span> Refer and Earn<span class="arrow">›</ </li>
+                    <li><span>🏆</span> My Rewards <span class="arrow">›</span></li>
+                    <li><span>🎫</span> Power Pass <span class="arrow">›</span></li>
+                    <li><span>🔔</span> Notifications <span class="arrow">›</span></li>
+                </ul>
+                <div id="back-to-login">
+                    <button type="button" onclick="navigateTo('login.html')">Log out</button>
+                </div>
+            </div>
+
+
+
+            <div id="map">
+                <img src="../images/map1.png">
+            </div>
+            <div id="footer">
+                <div id="footer-grid">
+                    <div class="footer-item">
+                        <img src="../images/bus.png" alt="Bus" onclick="navigateTo('routes.html')">
+                        <span>Routes</span>
+                    </div>
+                    <div class="footer-item">
+                        <img src="../images/info.png" alt="Info" onclick="navigateTo('bus_info.html')">
+                        <span>Bus Info</span>
+                    </div>
+                    <div class="footer-item">
+                        <img src="../images/history.png" alt="History" onclick="navigateTo('history.html')">
+                        <span>History</span>
+                    </div>
+                    <div class="footer-item">
+                        <img src="../images/user.png" alt="Profile">
+                        <span>Profile</span>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        const menuBtn = document.getElementById("menu-button");
+        const sidebar = document.getElementById("sidebar");
+        const backBtn = document.querySelector(".back-btn");
+
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.add("open");
+        });
+
+        backBtn.addEventListener("click", () => {
+            sidebar.classList.remove("open");
+        });
+
+        function navigateTo(url) {
+            const screen = document.querySelector('.mobile-screen');
+            screen.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
+
+
+</body>
+
+</html>

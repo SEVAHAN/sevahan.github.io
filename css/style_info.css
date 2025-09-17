@@ -1,0 +1,106 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mobile-screen {
+  width: 360px;
+  height: 640px;
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 1;
+}
+
+
+.header {
+  background: rgb(6, 6, 66);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  position: relative;
+  height: 50px;
+}
+
+.header h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 22px;   /* Increased size */
+  font-weight: 800;  /* Bolder text */
+  letter-spacing: 1px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;   /* Slightly bigger arrow */
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Bus Card Styles */
+.bus-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.bus-card:hover {
+  transform: scale(1.02);
+}
+
+.bus-details h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.bus-details p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Status Labels */
+.status {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.on-time {
+  background: #d4edda;
+  color: #155724;
+}
+
+.delayed {
+  background: #f8d7da;
+  color: #721c24;
+}
