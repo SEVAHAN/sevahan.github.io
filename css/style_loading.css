@@ -9,7 +9,7 @@ body {
 .mobile-screen {
   width: 360px;
   /* Typical mobile width */
-  height: 640px;
+  height: 700px;
   /* Typical mobile height */
   background-color: rgb(6, 6, 66);
   border: 2px solid #333;
